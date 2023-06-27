@@ -430,18 +430,7 @@ h2 {
         text-align: center;
     }
 
-    .reservacion {
-        padding: 30px 30px 0 30px;
-    }
-
-    .reservacion-content {
-        flex-direction: column;
-    }
-
-    .reserv-form {
-        width: 100%;
-        text-align: center;
-    }
+ 
 
 
     .footer-txt {
