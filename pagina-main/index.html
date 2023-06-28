@@ -11,7 +11,7 @@
 
 <body>
     <header class= "header">
-        <DIV class="menu container">
+        <div class="menu container">
             <a href="#" class="logo">logo</a>
             <input type="checkbox" id="menu">
             <label for="menu">
@@ -25,7 +25,7 @@
                     <li><a href="#">Ayuda</a></li>
                 </ul>
             </nav>
-        </DIV>
+        </div>
         <div class="header-content container">
             <div class="header-txt">
                 <h1>Renta de salones</h1>
@@ -107,12 +107,12 @@
         <div class="footer-content">
             <div class="footer-form">
                 <h2>registro</h2>
-                <form>
-                    <input class="campo" type="text" placeholder="nombre">
-                    <input class="campo" type="email"  placeholder="correo">
-                    <input class="campo" type="phone"  placeholder="telefono">
-                    <input class="campo" type="home"  placeholder="domicilio">
-                    <input type="Date" id="BookingDate" placeholder="Booking Date(DD/MM/YY)" class="campo" name=""><br>
+                <form id="registration-form">
+                    <input class="campo" type="text" placeholder="nombre" id="Name">
+                    <input class="campo" type="email" placeholder="correo" id="Email">
+                    <input class="campo" type="phone" placeholder="telefono" id="Phone">
+                    <input class="campo" type="home" placeholder="domicilio" id="Address">
+                    <input type="date" id="BookingDate" placeholder="Fecha de reserva" class="campo" name=""><br>
                     <textarea class="campo" cols="30" rows="10"></textarea>
                     <input class="btn-2" type="submit" value="enviar">
                 </form>
@@ -131,16 +131,16 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('form').submit(function(event) {
+            $('#registration-form').submit(function(event) {
                 event.preventDefault(); // Detener el comportamiento predeterminado del formulario
-    
+
                 var N, E, P, B, A;
                 N = $('#Name').val();
                 E = $('#Email').val();
                 P = $('#Phone').val();
                 B = $('#BookingDate').val();
                 A = $('#Address').val();
-    
+
                 if (N.trim() === '' || E.trim() === '' || P.trim() === '' || B.trim() === '' || A.trim() === '') {
                     alert("Por favor, completa todos los campos.");
                 } else {
@@ -152,7 +152,7 @@
                         bookingDate: B,
                         address: A
                     };
-    
+
                     // Realizar la solicitud AJAX
                     $.ajax({
                         url: "conexion.php", // Ruta al archivo PHP en tu servidor
@@ -174,8 +174,7 @@
                 }
             });
         });
-        <div id="result-message"></div>  
     </script>
-  
+    <div id="result-message"></div>  
 </body>
 </html>
