@@ -22,7 +22,7 @@ function validation(event) {
 
         // Realizar la solicitud AJAX
         $.ajax({
-            url: "conexion.php", // Ruta al archivo PHP en tu servidor
+            url: "conexcion.php", // Ruta al archivo PHP en tu servidor
             type: "POST",
             data: data,
             success: function(response) {
