@@ -13,7 +13,7 @@ if (!$connection) {
 }
 
 // Ejecutar consulta
-$query = SELECT * FROM `usuarios`:
+$query = "SELECT * FROM usuarios";
 $result = mysqli_query($connection, $query);
 
 // Obtener los resultados como un array
