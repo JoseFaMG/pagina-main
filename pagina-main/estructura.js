@@ -1,11 +1,13 @@
-function validation() {
+function validation(event) {
+    event.preventDefault(); // Detener el comportamiento predeterminado del formulario
+
     var N, E, P, B, A;
     N = document.getElementById('Name').value;
     E = document.getElementById('Email').value;
     P = document.getElementById('Phone').value;
     B = document.getElementById('BookingDate').value;
-    A = document.getElementById('Aadhar').value;
-    
+    A = document.getElementById('Address').value;
+
     if (N.trim() === '' || E.trim() === '' || P.trim() === '' || B.trim() === '' || A.trim() === '') {
         alert("Por favor, completa todos los campos.");
     } else {
@@ -15,9 +17,9 @@ function validation() {
             email: E,
             phone: P,
             bookingDate: B,
-            aadhar: A
+            address: A
         };
-        
+
         // Realizar la solicitud AJAX
         $.ajax({
             url: "conexion.php", // Ruta al archivo PHP en tu servidor
