@@ -153,24 +153,22 @@
                         address: A
                     };
 
-                    // Realizar la solicitud AJAX
+
                     $.ajax({
-                        url: "conexion.php", // Ruta al archivo PHP en tu servidor
-                        type: "POST",
-                        data: data,
-                        success: function(response) {
-                            // Manipular la respuesta del servidor
-                            alert("Tu registro se envió correctamente.");
-                            // Actualizar el contenido de la página o mostrar mensaje de éxito
-                            // Ejemplo:
-                            $('#result-message').text("Registro enviado correctamente.");
-                        },
-                        error: function(xhr, status, error) {
-                            // Manejar errores de la solicitud
-                            console.error(error);
-                            alert("Ocurrió un error al enviar el registro.");
-                        }
+                     url: "conexion.php", // Ruta al archivo PHP en tu servidor
+                     type: "POST",
+                     data: data,
+                     success: function(response) {
+                        alert("Tu registro se envió correctamente.");
+                        $('#result-message').text("Registro enviado correctamente.");
+                     },
+                     error: function(xhr, status, error) {
+                        console.error(error);
+
+                        alert("Ocurrió un error al enviar el registro."); }
+
                     });
+         
                 }
             });
         });
