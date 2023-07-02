@@ -128,7 +128,7 @@
             <p> Christian Delgado </p>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script>
         $(document).ready(function() {
             $('#registration-form').submit(function(event) {
@@ -153,28 +153,27 @@
                         address: A
                     };
 
-                    // Realizar la solicitud AJAX
+
                     $.ajax({
-                        url: "conexion.php", // Ruta al archivo PHP en tu servidor
-                        type: "POST",
-                        data: data,
-                        success: function(response) {
-                            // Manipular la respuesta del servidor
-                            alert("Tu registro se envió correctamente.");
-                            // Actualizar el contenido de la página o mostrar mensaje de éxito
-                            // Ejemplo:
-                            $('#result-message').text("Registro enviado correctamente.");
-                        },
-                        error: function(xhr, status, error) {
-                            // Manejar errores de la solicitud
-                            console.error(error);
-                            alert("Ocurrió un error al enviar el registro.");
-                        }
+                     url: "conexcion.php", // Ruta al archivo PHP en tu servidor
+                     type: "POST",
+                     data: data,
+                     success: function(response) {
+                        alert("Tu registro se envió correctamente.");
+                        $('#result-message').text("Registro enviado correctamente.");
+                     },
+                     error: function(xhr, status, error) {
+                        console.error(error);
+
+                        alert("Ocurrió un error al enviar el registro."); }
+
                     });
+         
                 }
             });
         });
     </script>
     <div id="result-message"></div>  
+    <a class="Document" href="index.html">NUBOX live</a>
 </body>
 </html>

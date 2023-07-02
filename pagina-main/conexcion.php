@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "2017452071";
 $database = "paginamain";
 
 // Establecer la conexión
@@ -16,12 +16,18 @@ if (!$connection) {
 $query = "SELECT * FROM usuarios";
 $result = mysqli_query($connection, $query);
 
-// Obtener los resultados como un array
-$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+// Verificar si se obtuvieron resultados
+if (mysqli_num_rows($result) > 0) {
+    // Obtener los resultados como un array
+    $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-// Enviar los resultados como respuesta en formato JSON
-echo json_encode($rows);
+    // Enviar los resultados como respuesta en formato JSON
+    echo json_encode($rows);
+} else {
+    echo "No se encontraron registros en la tabla usuarios.";
+}
 
 // Cerrar la conexión
 mysqli_close($connection);
 ?>
+
